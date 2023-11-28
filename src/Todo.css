@@ -76,3 +76,59 @@ input {
   background-color: #f4f4f4;
   cursor: pointer;
 }
+#add-task {
+  flex: 0.5;
+  transition: 0.3s;
+  font-size: 1.2rem;
+  padding: 5px;
+  background: #f1ddff;
+  color: #6364ff;
+  border: #6364ff solid 2px;
+  border-radius: 10px;
+}
+#add-task:hover {
+  color: #f1ddff;
+  background-color: #6364ff;
+}
+
+.task {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 0 3px;
+  padding: 5px;
+  align-items: center;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 5px;
+}
+
+.task button {
+  flex: 1;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+  cursor: pointer;
+}
+
+.task .checkTask {
+  color: #37784f;
+  margin-right: 5px;
+  border: solid 2px #37784f;
+  font-size: 1.5rem;
+}
+
+.task .checkTask:hover {
+  background-color: #37784f;
+  color: #f4f4f4;
+}
+.task .deleteTask {
+  color: red;
+
+  border: solid 2px red;
+  font-size: 1.5rem;
+}
+.task .deleteTask:hover {
+  background-color: red;
+  color: #f4f4f4;
+}
