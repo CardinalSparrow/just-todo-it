@@ -5,15 +5,41 @@ body {
   justify-content: center;
   align-items: center;
 }
+#title {
+  color: green;
+  text-align: center;
+}
+#title span {
+  color: #ffbf00;
+  text-decoration: green line-through;
+}
+#task-counter {
+  color: #ffbf00;
+  margin-left: 20px;
+}
+#completed-tasks {
+  color: green;
+  margin-left: 20px;
+}
+#title .fa-check {
+  border: 2px solid #37784f;
+  padding: 0 5px;
+  border-radius: 10px;
+}
 #container {
   height: 600px;
+  scroll-behavior: smooth;
 }
 
 #task-container {
+  overflow: hidden;
   margin: 20px;
   max-height: calc(350px);
 }
 
+#task-container:hover {
+  overflow-y: auto;
+}
 #add-task-container {
   position: relative;
   /* width: 500px; */
@@ -25,21 +51,30 @@ body {
   align-items: center;
   margin: 20px;
 }
+
 .msg {
+  /* display: none; */
   position: absolute;
   left: 25%;
   top: -25%;
+  animation: bounce 2s ease-in-out infinite;
 }
 
 .error {
   color: red;
 }
+
 input {
   flex: 5;
   margin-right: 10px;
   border-radius: 10px;
   font-size: 1.2rem;
   padding: 5px;
+}
+#time {
+  margin-right: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
 }
 #add-task {
   flex: 0.5;
@@ -51,6 +86,11 @@ input {
   border: #6364ff solid 2px;
   border-radius: 10px;
 }
+
+ul {
+  padding-left: 0px;
+}
+
 #add-task:hover {
   color: #f1ddff;
   background-color: #6364ff;
@@ -69,40 +109,15 @@ input {
   justify-content: space-between;
   margin-right: 5px;
 }
-.task button {
-  flex: 1;
+
+.task li {
+  list-style: none;
+  flex: 4;
+  font-weight: bold;
   padding: 5px;
-  border-radius: 10px;
-  background-color: #f4f4f4;
-  cursor: pointer;
-}
-#add-task {
-  flex: 0.5;
-  transition: 0.3s;
   font-size: 1.2rem;
-  padding: 5px;
-  background: #f1ddff;
-  color: #6364ff;
-  border: #6364ff solid 2px;
-  border-radius: 10px;
+  margin: 10px;
 }
-#add-task:hover {
-  color: #f1ddff;
-  background-color: #6364ff;
-}
-
-.task {
-  background-color: #f4f4f4;
-  border-radius: 10px;
-  box-shadow: 0 0 3px;
-  padding: 5px;
-  align-items: center;
-  margin-bottom: 8px;
-  display: flex;
-  justify-content: space-between;
-  margin-right: 5px;
-}
-
 .task button {
   flex: 1;
   padding: 5px;
@@ -122,6 +137,17 @@ input {
   background-color: #37784f;
   color: #f4f4f4;
 }
+.task .recycleTask {
+  color: #ffbf00;
+  margin-right: 5px;
+  border: solid 2px #ffbf00;
+  font-size: 1.5rem;
+}
+
+.task .recycleTask:hover {
+  background-color: #ffbf00;
+  color: #f4f4f4;
+}
 .task .deleteTask {
   color: red;
 
@@ -132,7 +158,6 @@ input {
   background-color: red;
   color: #f4f4f4;
 }
-
 .date-and-time {
   border: solid 2px gray;
   padding: 0 2px;
@@ -142,6 +167,12 @@ input {
 .date-and-time p {
   margin: 5px;
   font-weight: bold;
+}
+
+#congratulations {
+  animation: bounce 2s ease-in-out infinite;
+  text-align: center;
+  color: green;
 }
 
 @keyframes bounce {
